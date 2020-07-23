@@ -9,15 +9,17 @@ public class Album {
 		return name;
 	}
 
+    private SongList songs;
+    
 	public ArrayList<Song> getSongs() {
-		return songs;
+		return songs.getSongs();
 	}
 
-	private ArrayList<Song> songs; 
+ 
 	
 	public Album(String name, Song song) {
 		this.name = name;
-		songs = new ArrayList<Song>();
+		songs = new SongList();
 		songs.add(song);
 	}
 	
@@ -25,5 +27,27 @@ public class Album {
 		songs.add(song);
 	}
 	
+public class SongList {
 
+	public SongList() {
+		songs = new ArrayList<Song>();
+	}
+
+	private ArrayList<Song> songs;
+
+	public ArrayList<Song> getSongs() {
+		return songs;
+	}
+
+	public void setSongs(ArrayList<Song> songs) {
+		this.songs = songs;
+	}
+	
+	public void add(Song song) {
+		songs.add(song);
+	}
+	
+}
+	
+	
 }
